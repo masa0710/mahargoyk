@@ -1,8 +1,8 @@
-
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle; // ★ 追加: rootBundle
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
@@ -72,6 +72,20 @@ class MapPageState extends State<MapPage> {
       return gOk && aOk;
     }).toList();
   }
+  
+  // ---- GTFS ----
+  List<Polyline> _gtfsRoutes = []; // 路線データ
+  List<Marker> _gtfsStations = []; // 駅データ
+  bool _showGtfs = false; // GTFS表示切り替えフラグ
+
+  // 路線ごとの固定色マップ
+  final Map<String, Color> _colorMap = {
+    'JR_KobeLine': Colors.blue,
+    'Hanshin_MainLine': Colors.orange,
+    'Sanyo_Line': Colors.red,
+    'KoubeDentetsu_Line': Colors.green,
+    'Potorain_Line': Colors.purple,
+  };
 
   // ---- UI ----
   bool _isZoomedIn = false;
@@ -93,6 +107,7 @@ class MapPageState extends State<MapPage> {
     }
     _loadMapData();
     _startLocationUpdates();
+    _loadGtfsData(); // GTFSデータ読み込みを追加
   }
 
   @override
@@ -120,14 +135,17 @@ class MapPageState extends State<MapPage> {
       if (!mounted) return;
       setState(() => _userLocation = LatLng(p.latitude, p.longitude));
       if (_isRouteVisible && _userLocation != null) {
+        // ナビゲーション中はマップをユーザー位置に追従させ、進行方向に回転
         _mapController.move(_userLocation!, _mapController.camera.zoom);
-        _mapController.rotate(-p.heading);
+        if (p.heading != 0) { // headingが有効な場合のみ回転
+            _mapController.rotate(-p.heading);
+        }
         _checkRouteProgress();
       }
     });
   }
 
-  // ================= Data =================
+
   Future<void> _loadMapData() async {
     try {
       final pos = await _getCurrentLocation();
@@ -168,8 +186,128 @@ class MapPageState extends State<MapPage> {
       return [];
     }
   }
+  
 
-  // ================= Routing =================
+  Future<void> _loadGtfsData() async {
+    try {
+      await _loadGtfsShapes();   // 路線データ読み込み
+      await _loadGtfsStations(); // 駅データ読み込み
+      if (mounted) setState(() {});
+      debugPrint('GTFSデータ読み込み完了: 路線 ${_gtfsRoutes.length}、駅 ${_gtfsStations.length}');
+    } catch (e) {
+      debugPrint('GTFSデータ読み込みエラー: $e');
+    }
+  }
+  
+  ///shapes.txt）を読み込み
+  Future<void> _loadGtfsShapes() async {
+    try {
+      final data = await rootBundle.loadString('assets/gtfs/shapes.txt');
+      final rows = const LineSplitter().convert(data);
+
+      final Map<String, List<Map<String, dynamic>>> shapeMap = {};
+
+      for (int i = 1; i < rows.length; i++) {
+        final cols = rows[i].split(',');
+        if (cols.length < 4) continue;
+
+        final shapeId = cols[0].trim();
+        final lat = double.tryParse(cols[1]);
+        final lon = double.tryParse(cols[2]);
+        final seq = int.tryParse(cols[3]);
+        if (lat == null || lon == null || seq == null) continue;
+
+        shapeMap.putIfAbsent(shapeId, () => []).add({
+          'lat': lat,
+          'lon': lon,
+          'seq': seq,
+        });
+      }
+
+      _gtfsRoutes = shapeMap.entries.map((entry) {
+        // 順序番号で並び替え
+        entry.value.sort((a, b) => a['seq'].compareTo(b['seq']));
+        final points = entry.value.map((e) => LatLng(e['lat'], e['lon'])).toList();
+        final smoothed = _smoothPolyline(points, 20);
+        final color = _colorMap[entry.key] ??
+            Colors.primaries[entry.key.hashCode % Colors.primaries.length];
+
+        return Polyline(points: smoothed, strokeWidth: 4.0, color: color);
+      }).toList();
+    } catch (e) {
+      debugPrint('GTFS shapes.txt 読み込みエラー: $e');
+    }
+  }
+
+  /// 線をスムージング
+  List<LatLng> _smoothPolyline(List<LatLng> points, int divisions) {
+    if (points.length < 2) return points;
+
+    final List<LatLng> smoothPoints = [];
+    for (int i = 0; i < points.length - 1; i++) {
+      final p1 = points[i];
+      final p2 = points[i + 1];
+      smoothPoints.add(p1);
+
+      // 区間を指定回数で補間
+      for (int j = 1; j < divisions; j++) {
+        final t = j / divisions;
+        final lat = p1.latitude + (p2.latitude - p1.latitude) * t;
+        final lon = p1.longitude + (p2.longitude - p1.longitude) * t;
+        smoothPoints.add(LatLng(lat, lon));
+      }
+    }
+    smoothPoints.add(points.last);
+    return smoothPoints;
+  }
+
+
+  /// 駅データを読み込み
+  Future<void> _loadGtfsStations() async {
+    final spotFiles = [
+      'assets/gtfs/JRspot.txt',
+      'assets/gtfs/Hansinspot.txt',
+      'assets/gtfs/Sanyospot.txt',
+      'assets/gtfs/Koubedentetsuspot.txt',
+      'assets/gtfs/Potorainspot.txt',
+      'assets/gtfs/Seishinyamatespot.txt',
+    ];
+
+    try {
+      for (String path in spotFiles) {
+        final data = await rootBundle.loadString(path);
+        final rows = const LineSplitter().convert(data);
+
+        for (int i = 1; i < rows.length; i++) {
+          final cols = rows[i].split(',');
+          if (cols.length < 4) continue;
+
+          final stopName = cols[1];
+          final lat = double.tryParse(cols[2]);
+          final lon = double.tryParse(cols[3]);
+          if (lat == null || lon == null) continue;
+
+          _gtfsStations.add(
+            Marker(
+              point: LatLng(lat, lon),
+              width: 80,
+              height: 30,
+              child: Column(
+                children: [
+
+                  const Icon(Icons.train, color: Colors.blue, size: 20), 
+                  Text(stopName, style: const TextStyle(fontSize: 10)),
+                ],
+              ),
+            ),
+          );
+        }
+      }
+    } catch (e) {
+      debugPrint('GTFS 駅データ読み込みエラー: $e');
+    }
+  }
+
   void _toggleRoute() async {
     if (_userLocation == null || _selectedSpot == null) return;
 
@@ -250,7 +388,7 @@ class MapPageState extends State<MapPage> {
       return;
     }
 
-    // 手前案内（1回だけ）
+    // 手前案内
     if (d < 50 && !_routeSteps[_currentStepIndex]['announced']) {
       final instruction = next['maneuver']['instruction'] ?? '次の案内なし';
       _speak(instruction);
@@ -278,6 +416,7 @@ class MapPageState extends State<MapPage> {
       _routeSteps = [];
       _currentStepIndex = 0;
       _selectedSpot = null;
+      _mapController.rotate(0); // ナビゲーション終了時にマップの回転をリセット
     });
     _speak('ナビゲーションを終了しました。');
   }
@@ -310,19 +449,37 @@ class MapPageState extends State<MapPage> {
       return const SizedBox.shrink();
     }
 
-    final total = Geolocator.distanceBetween(
-      _routePoints.first.latitude,
-      _routePoints.first.longitude,
-      _routePoints.last.latitude,
-      _routePoints.last.longitude,
-    );
-    final completed = Geolocator.distanceBetween(
-      _routePoints.first.latitude,
-      _routePoints.first.longitude,
-      _userLocation!.latitude,
-      _userLocation!.longitude,
-    );
-    final progress = (completed / total).clamp(0.0, 1.0);
+    // ルート全体の距離を計算
+    double totalDistance = 0;
+    if (_routePoints.isNotEmpty) {
+      for (int i = 0; i < _routePoints.length - 1; i++) {
+          totalDistance += Geolocator.distanceBetween(
+              _routePoints[i].latitude,
+              _routePoints[i].longitude,
+              _routePoints[i + 1].latitude,
+              _routePoints[i + 1].longitude,
+          );
+      }
+    }
+    
+    // ユーザーから目的地までの残り距離を計算
+    double remainingDistance = 0;
+    if (_routePoints.isNotEmpty) {
+        remainingDistance = Geolocator.distanceBetween(
+            _userLocation!.latitude,
+            _userLocation!.longitude,
+            _routePoints.last.latitude,
+            _routePoints.last.longitude,
+        );
+        // 残り距離が総距離を上回ることはないようにする
+        remainingDistance = remainingDistance.clamp(0.0, totalDistance);
+    }
+    
+    // 進捗率を計算
+    final completedDistance = (totalDistance > remainingDistance) ? totalDistance - remainingDistance : 0.0;
+    final progress = (totalDistance > 0) ? (completedDistance / totalDistance).clamp(0.0, 1.0) : 0.0;
+    final remainingText = remainingDistance.toStringAsFixed(1);
+
 
     return Positioned(
       top: 16,
@@ -367,7 +524,7 @@ class MapPageState extends State<MapPage> {
               ),
               const SizedBox(height: 8),
               Text(
-                '目的地まで: ${(total - completed).clamp(0.0, total).toStringAsFixed(1)} m',
+                '目的地まで: $remainingText m',
                 style: const TextStyle(fontSize: 14, color: Colors.grey),
               ),
             ],
@@ -385,13 +542,14 @@ class MapPageState extends State<MapPage> {
       appBar: const AppHeader(),
       body: Stack(
         children: [
-          // --- Map ---
+          //Map 
           FlutterMap(
             mapController: _mapController,
             options: MapOptions(
               initialCenter: sannomiya,
               initialZoom: 15.0,
               onTap: (_, __) {
+                // タップで選択解除
                 setState(() {
                   _selectedSpot = null;
                   _isRouteVisible = false;
@@ -404,14 +562,21 @@ class MapPageState extends State<MapPage> {
                 urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
                 subdomains: const ['a', 'b', 'c', 'd'],
               ),
+              
+              // GTFSの路線レイヤーを追加
+              if (_showGtfs && _gtfsRoutes.isNotEmpty)
+                PolylineLayer(polylines: _gtfsRoutes),
+                
               if (_isRouteVisible && _routePoints.isNotEmpty)
                 PolylineLayer(
                   polylines: [
                     Polyline(points: _routePoints, color: Colors.blue, strokeWidth: 5),
                   ],
                 ),
+                
               MarkerLayer(
                 markers: [
+                  // ユーザー位置マーカー
                   if (_userLocation != null)
                     Marker(
                       point: _userLocation!,
@@ -419,6 +584,11 @@ class MapPageState extends State<MapPage> {
                       height: 60,
                       child: const Icon(Icons.navigation, color: Colors.red, size: 36),
                     ),
+                    
+                  //  GTFSの駅マーカーを追加
+                  if (_showGtfs) ..._gtfsStations,
+                  
+                  // スポットマーカー
                   ..._filteredSpots.map((spot) => Marker(
                         point: LatLng(spot.latitude, spot.longitude),
                         width: 72,
@@ -440,7 +610,7 @@ class MapPageState extends State<MapPage> {
                                 width: 72,
                                 child: Text(
                                   spot.title,
-                                  maxLines: 1, // ← オーバーフロー対策
+                                  maxLines: 1, 
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
@@ -455,7 +625,7 @@ class MapPageState extends State<MapPage> {
             ],
           ),
 
-          // --- Filter Button ---
+
           Positioned(
             top: 16,
             right: 16,
@@ -469,9 +639,34 @@ class MapPageState extends State<MapPage> {
             ),
           ),
 
-          // --- Filter Panel ---
+          if (_showGtfs)
+            Positioned(
+              top: 80, // フィルターボタンと被らないように調整
+              left: 16,
+              child: Card(
+                elevation: 4,
+                color: Colors.white.withOpacity(0.85),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                child: Padding(
+                  padding: const EdgeInsets.all(6),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      _LegendItem(color: Colors.blue, text: 'JR神戸線'),
+                      _LegendItem(color: Colors.orange, text: '阪神本線'),
+                      _LegendItem(color: Colors.red, text: '山陽電鉄線'),
+                      _LegendItem(color: Colors.green, text: '神戸電鉄線'),
+                      _LegendItem(color: Colors.purple, text: 'ポートライナー'),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            
+        
           Positioned(
-            top: 80,
+            top: 80, // GTFS凡例と被らないように調整
             left: 12,
             right: 12,
             child: AnimatedSwitcher(
@@ -507,11 +702,11 @@ class MapPageState extends State<MapPage> {
             ),
           ),
 
-          // --- Spot mini card with route button ---
+
           if (_selectedSpot != null && !_isRouteVisible)
             Positioned(
               right: 16,
-              top: 16,
+              top: 80, // フィルターボタンと被らないように調整
               child: Card(
                 elevation: 4,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -587,10 +782,23 @@ class MapPageState extends State<MapPage> {
               ),
             ),
 
-          // --- Navigation progress card ---
+
           _navigationUi(),
 
-          // --- My location button ---
+
+          Positioned(
+            bottom: 80, // My location button の上に配置
+            right: 16,
+            child: FloatingActionButton(
+              heroTag: 'gtfsToggle',
+              onPressed: () => setState(() => _showGtfs = !_showGtfs),
+              backgroundColor: _showGtfs ? Colors.blue[700] : Colors.white,
+              child: Icon(Icons.directions_subway,
+                  color: _showGtfs ? Colors.white : Colors.blue),
+            ),
+          ),
+
+
           Positioned(
             bottom: 16,
             right: 16,
@@ -603,6 +811,10 @@ class MapPageState extends State<MapPage> {
                 } else {
                   _mapController.move(sannomiya, 15.0);
                 }
+
+                if (!_isRouteVisible) {
+                    _mapController.rotate(0);
+                }
               },
               backgroundColor: _isZoomedIn ? Colors.blue[700] : Colors.white,
               child: Icon(Icons.my_location,
@@ -612,6 +824,25 @@ class MapPageState extends State<MapPage> {
         ],
       ),
       bottomNavigationBar: AppBottomNavigation(currentIndex: _selectedIndex),
+    );
+  }
+}
+
+
+class _LegendItem extends StatelessWidget {
+  final Color color;
+  final String text;
+  const _LegendItem({required this.color, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(width: 20, height: 4, color: color),
+        const SizedBox(width: 6),
+        Text(text, style: const TextStyle(fontSize: 12)),
+      ],
     );
   }
 }

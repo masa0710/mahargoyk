@@ -1,0 +1,479 @@
+shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence
+JR_KobeLine,34.642286,135.112913,1　///須磨駅
+JR_KobeLine,34.643215, 135.118168,2
+JR_KobeLine,34.643314, 135.118594,3
+JR_KobeLine,34.643748, 135.120095,4
+JR_KobeLine,34.647224, 135.126602,5 ///須磨海浜公園駅
+JR_KobeLine,34.649110, 135.130898,6
+JR_KobeLine,34.651417, 135.135377,7 ///鷹取駅
+JR_KobeLine,34.652522, 135.136890,8
+JR_KobeLine,34.654537, 135.139711,9
+JR_KobeLine,34.657562, 135.145164,10 ///新長田駅
+JR_KobeLine,34.657889, 135.145959,11
+JR_KobeLine,34.659315, 135.148181,12
+JR_KobeLine,34.668237, 135.164895,13 ///兵庫駅
+JR_KobeLine,34.669355, 135.166771,14
+JR_KobeLine,34.670621, 135.168260,15
+JR_KobeLine,34.674772, 135.175794,16
+JR_KobeLine,34.675897, 135.177140,17
+JR_KobeLine,34.677237, 135.177989,18
+JR_KobeLine,34.679452, 135.178196,19 ///神戸駅
+JR_KobeLine,34.677237, 135.177989,20
+JR_KobeLine,34.682850, 135.178599,21
+JR_KobeLine,34.683664, 135.178935,22
+JR_KobeLine,34.684835, 135.179951
+,23
+JR_KobeLine,34.687976, 135.183767,24
+JR_KobeLine,34.688779, 135.185054,25
+JR_KobeLine,34.689595, 135.187295,26 ///元町駅
+JR_KobeLine,34.692968, 135.193099,27
+JR_KobeLine,34.694158, 135.194402,28 ///三ノ宮駅
+JR_KobeLine,34.698123, 135.198590,29
+JR_KobeLine,34.702802, 135.205272,30
+JR_KobeLine,34.703892, 135.207600,31
+JR_KobeLine,34.705774, 135.216189,32 ///灘駅
+JR_KobeLine,34.708706, 135.225037,33 ///摩耶駅
+JR_KobeLine,34.710398, 135.229974,34
+JR_KobeLine,34.712872, 135.235469,35
+JR_KobeLine,34.714706, 135.238251,36 ///六甲道駅
+JR_KobeLine,34.717703, 135.242818,37
+JR_KobeLine,34.719214, 135.248880,38
+JR_KobeLine,34.719407, 135.250258,39
+JR_KobeLine,34.719071, 135.259264,40
+JR_KobeLine,34.719139, 135.260045,41
+JR_KobeLine,34.719476, 135.262279,42 ///住吉駅
+
+Hanshin_MainLine,34.662388, 135.144094,1 ///西代駅
+Hanshin_MainLine,34.667296, 135.151715,2 ///高速長田駅
+Hanshin_MainLine,34.667670, 135.152627,3
+Hanshin_MainLine,34.667764, 135.153178,4
+Hanshin_MainLine,34.668055, 135.157158,5
+Hanshin_MainLine,34.671303, 135.161892,6 ///大開駅
+Hanshin_MainLine,34.674883, 135.167102,7
+Hanshin_MainLine,34.676439, 135.170005,8 ///新開地駅
+Hanshin_MainLine,34.676801, 135.170608,9
+Hanshin_MainLine,34.676801, 135.170608,10
+Hanshin_MainLine,34.677576, 135.171401,11
+Hanshin_MainLine,34.679548, 135.175003,12 ///高速神戸駅
+Hanshin_MainLine,34.681149, 135.177476,13
+Hanshin_MainLine,34.682322, 135.179046,14
+Hanshin_MainLine,34.682549, 135.179202,15
+Hanshin_MainLine,34.684143, 135.179832,16 ///西元町駅
+Hanshin_MainLine,34.684981, 135.180501,17
+Hanshin_MainLine,34.687789, 135.183855,18
+Hanshin_MainLine,34.687941, 135.184078,19
+Hanshin_MainLine,34.689376, 135.187281,20 ///元町駅
+Hanshin_MainLine,34.693662, 135.195572,21 ///阪神神戸三宮
+Hanshin_MainLine,34.695663, 135.200327,22
+Hanshin_MainLine,34.697586, 135.204975,23
+Hanshin_MainLine,34.69912,  135.208194,24
+Hanshin_MainLine,34.700468, 135.210645,25 ///春日野道駅
+Hanshin_MainLine,34.700689, 135.210917,26
+Hanshin_MainLine,34.701780, 135.212062,27
+Hanshin_MainLine,34.703960, 135.217490,28
+Hanshin_MainLine,34.704106, 135.217847,29 ///岩屋駅
+Hanshin_MainLine,34.70576,  135.224467,30 ///西灘駅
+Hanshin_MainLine,34.707669, 135.231005,31 ///大石駅
+Hanshin_MainLine,34.710645,135.240753,32  ///新在家駅
+Hanshin_MainLine,34.713344,135.249679,33  ///石屋川駅
+Hanshin_MainLine,34.714874, 135.255058,34
+Hanshin_MainLine,34.714879,135.255677,35 ///御影駅
+Hanshin_MainLine,34.71306,135.261225,36 ///住吉駅
+Hanshin_MainLine,34.712215,135.263658,37 
+Hanshin_MainLine,34.711962, 135.265158,38
+Hanshin_MainLine,34.712018, 135.266641,39
+Hanshin_MainLine,34.712579,135.269243,40 ///魚崎駅
+Hanshin_MainLine,34.714214, 135.276058,41
+Hanshin_MainLine,34.715181, 135.278087,42
+Hanshin_MainLine,34.716192, 135.279492,43
+Hanshin_MainLine,34.717107,135.280775,44 ///青木駅
+Hanshin_MainLine,34.717771, 135.281725,45
+Hanshin_MainLine,34.719069, 135.283577,46
+Hanshin_MainLine,34.719635, 135.284611,47
+Hanshin_MainLine,34.719635, 135.284611,48
+Hanshin_MainLine,34.720178, 135.285806,49
+Hanshin_MainLine,34.722665, 135.291603,50 ///深江駅
+Hanshin_MainLine,34.726577, 135.300642,51
+Hanshin_MainLine,34.727896, 135.30383,52 ///芦屋駅
+
+Sanyo_Line,34.667296, 135.151715,2 ///高速長田駅
+Sanyo_Line,34.667670, 135.152627,3
+Sanyo_Line,34.667764, 135.153178,4
+Sanyo_Line,34.668055, 135.157158,5
+Sanyo_Line,34.671303, 135.161892,6 ///大開駅
+Sanyo_Line,34.674883, 135.167102,7
+Sanyo_Line,34.676439, 135.170005,8 ///新開地駅
+Sanyo_Line,34.676801, 135.170608,9
+Sanyo_Line,34.676801, 135.170608,10
+Sanyo_Line,34.677576, 135.171401,11
+Sanyo_Line,34.679548, 135.175003,12 ///高速神戸駅
+Sanyo_Line,34.681149, 135.177476,13
+Sanyo_Line,34.682322, 135.179046,14
+Sanyo_Line,34.682549, 135.179202,15
+Sanyo_Line,34.684143, 135.179832,16 ///西元町駅
+Sanyo_Line,34.684981, 135.180501,17
+Sanyo_Line,34.687789, 135.183855,18
+Sanyo_Line,34.687941, 135.184078,19
+Sanyo_Line,34.689376, 135.187281,20 ///元町駅
+Sanyo_Line,34.693662, 135.195572,21 ///阪神神戸三宮
+
+KoubeDentetsu_Line,34.676572, 135.168873,1 ///新開地駅
+KoubeDentetsu_Line,34.678538, 135.167170,2
+KoubeDentetsu_Line,34.678812, 135.166868,3
+KoubeDentetsu_Line,34.679326, 135.166185,4  ///湊川駅
+KoubeDentetsu_Line,34.679676, 135.165803,5
+KoubeDentetsu_Line,34.680486, 135.164780,6
+KoubeDentetsu_Line,34.680757, 135.164304,7
+KoubeDentetsu_Line,34.681021, 135.163608,8
+KoubeDentetsu_Line,34.681169, 135.162852,9
+KoubeDentetsu_Line,34.680992, 135.160454,10
+KoubeDentetsu_Line,34.680880, 135.159931,11
+KoubeDentetsu_Line,34.680776, 135.159605,12
+KoubeDentetsu_Line,34.679943, 135.157919,13
+KoubeDentetsu_Line,34.679796, 135.157465,14
+KoubeDentetsu_Line,34.679752, 135.157252,15
+KoubeDentetsu_Line,34.679036, 135.151927,16
+KoubeDentetsu_Line,34.679044, 135.151572,17
+KoubeDentetsu_Line,34.679083, 135.151259,18
+KoubeDentetsu_Line,34.679299, 135.150623,19
+KoubeDentetsu_Line,34.679721, 135.150032,20
+KoubeDentetsu_Line,34.680065, 135.149773,21
+KoubeDentetsu_Line,34.680324, 135.149652,22
+KoubeDentetsu_Line,34.680750, 135.149566,23
+KoubeDentetsu_Line,34.681626, 135.149562,24
+KoubeDentetsu_Line,34.682285, 135.149622,25
+KoubeDentetsu_Line,34.682661, 135.149508,26
+KoubeDentetsu_Line,34.682967, 135.149332,27
+KoubeDentetsu_Line,34.683299, 135.149012,28
+KoubeDentetsu_Line,34.683585, 135.148559,29
+KoubeDentetsu_Line,34.683714, 135.148185,30
+KoubeDentetsu_Line,34.683976, 135.147049,31
+KoubeDentetsu_Line,34.684107, 135.146563,32
+KoubeDentetsu_Line,34.684219, 135.146299,33
+KoubeDentetsu_Line,34.684495, 135.145838,34
+KoubeDentetsu_Line,34.685351, 135.144879,35
+KoubeDentetsu_Line,34.685561, 135.144573,36
+KoubeDentetsu_Line,34.685754, 135.144014,37   ///丸山駅
+KoubeDentetsu_Line,34.686748, 135.142613,38
+KoubeDentetsu_Line,34.689451, 135.140250,39
+KoubeDentetsu_Line,34.690098, 135.140019,40
+KoubeDentetsu_Line,34.690545, 135.140034,41
+KoubeDentetsu_Line,34.690921, 135.140168,42
+KoubeDentetsu_Line,34.691390, 135.140502,43
+KoubeDentetsu_Line,34.691876, 135.141133,44
+KoubeDentetsu_Line,34.692704, 135.142307,45  ///鵯越駅
+KoubeDentetsu_Line,34.693048, 135.142635,46 
+KoubeDentetsu_Line,34.694826, 135.143442,47
+KoubeDentetsu_Line,34.695301, 135.143846,48
+KoubeDentetsu_Line,34.695485, 135.144069,49
+KoubeDentetsu_Line,34.697225, 135.146490,50
+KoubeDentetsu_Line,34.697654, 135.146828,51
+KoubeDentetsu_Line,34.697878, 135.146949,52
+KoubeDentetsu_Line,34.698260, 135.147062,53
+KoubeDentetsu_Line,34.699351, 135.147178,54
+KoubeDentetsu_Line,34.699612, 135.147267,55
+KoubeDentetsu_Line,34.699880, 135.147390,56
+KoubeDentetsu_Line,34.700090, 135.147512,57
+KoubeDentetsu_Line,34.700583, 135.147907,58
+KoubeDentetsu_Line,34.702321, 135.149456,59
+KoubeDentetsu_Line,34.702897, 135.149738,60
+KoubeDentetsu_Line,34.703347, 135.149809,61
+KoubeDentetsu_Line,34.705501, 135.149898,62
+KoubeDentetsu_Line,34.708264, 135.149819,63
+KoubeDentetsu_Line,34.709877, 135.149237,64
+KoubeDentetsu_Line,34.711151, 135.147938,65
+KoubeDentetsu_Line,34.711454, 135.147411,66
+KoubeDentetsu_Line,34.712067, 135.145912,67
+KoubeDentetsu_Line,34.712414, 135.144849,68
+KoubeDentetsu_Line,34.712905, 135.144146,69
+KoubeDentetsu_Line,34.713476, 135.143733,70
+KoubeDentetsu_Line,34.713964, 135.143572,71
+KoubeDentetsu_Line,34.714449, 135.143559,72
+KoubeDentetsu_Line,34.714857, 135.143640,73
+KoubeDentetsu_Line,34.715283, 135.143839,74
+KoubeDentetsu_Line,34.715825, 135.144318,75
+KoubeDentetsu_Line,34.716976, 135.145754,76
+KoubeDentetsu_Line,34.717395, 135.146110,77
+KoubeDentetsu_Line,34.717547, 135.146202,78
+KoubeDentetsu_Line,34.717761, 135.146306,79
+KoubeDentetsu_Line,34.718038, 135.146388,80
+KoubeDentetsu_Line,34.718466, 135.146432,81
+KoubeDentetsu_Line,34.723886, 135.145869,82 ///鈴蘭台駅
+KoubeDentetsu_Line,34.724453, 135.145787,83
+KoubeDentetsu_Line,34.727670, 135.145491,85
+KoubeDentetsu_Line,34.728438, 135.145536,86
+KoubeDentetsu_Line,34.728938, 135.145658,87
+KoubeDentetsu_Line,34.729714, 135.145991,88
+KoubeDentetsu_Line,34.730227, 135.146324,89
+KoubeDentetsu_Line,34.730664, 135.146704,90
+KoubeDentetsu_Line,34.730884, 135.146930,91
+KoubeDentetsu_Line,34.731936, 135.148385,92
+KoubeDentetsu_Line,34.732096, 135.148587,93
+KoubeDentetsu_Line,34.732542, 135.149010,94
+KoubeDentetsu_Line,34.733021, 135.149316,95
+KoubeDentetsu_Line,34.733455, 135.149480,96
+KoubeDentetsu_Line,34.735756, 135.150109,97
+KoubeDentetsu_Line,34.736199, 135.150266,98
+KoubeDentetsu_Line,34.736691, 135.150537,99
+KoubeDentetsu_Line,34.737546, 135.151182,100
+KoubeDentetsu_Line,34.738209, 135.151578,101
+KoubeDentetsu_Line,34.738901, 135.151855,102
+KoubeDentetsu_Line,34.739404, 135.151936,103   ///北鈴蘭台駅
+KoubeDentetsu_Line,34.741502, 135.152320,105
+KoubeDentetsu_Line,34.744584, 135.153597,106
+KoubeDentetsu_Line,34.744833, 135.153654,107
+KoubeDentetsu_Line,34.746059, 135.153345,109
+KoubeDentetsu_Line,34.746532, 135.152914,110   ///山の街駅
+KoubeDentetsu_Line,34.747023, 135.152137,111
+KoubeDentetsu_Line,34.747890, 135.148834,112
+KoubeDentetsu_Line,34.748186, 135.148336,113
+KoubeDentetsu_Line,34.748596, 135.147979,114
+KoubeDentetsu_Line,34.749273, 135.147708,115
+KoubeDentetsu_Line,34.749859, 135.147756,116
+KoubeDentetsu_Line,34.750149, 135.147867,117
+KoubeDentetsu_Line,34.750569, 135.148161,118
+KoubeDentetsu_Line,34.750667, 135.148260,119
+KoubeDentetsu_Line,34.750800, 135.148427,120
+KoubeDentetsu_Line,34.752120, 135.150937,121
+KoubeDentetsu_Line,34.752518, 135.151441,122
+KoubeDentetsu_Line,34.752815, 135.151689,123
+KoubeDentetsu_Line,34.753227, 135.151903,124
+KoubeDentetsu_Line,34.754144, 135.152137,125
+KoubeDentetsu_Line,34.754545, 135.152307,126
+KoubeDentetsu_Line,34.754848, 135.152515,127
+KoubeDentetsu_Line,34.755308, 135.153025,128
+KoubeDentetsu_Line,34.756339, 135.155036,129
+KoubeDentetsu_Line,34.756531, 135.155313,130
+KoubeDentetsu_Line,34.756838, 135.155639,131  ///箕谷駅
+KoubeDentetsu_Line,34.757419, 135.156065,132
+KoubeDentetsu_Line,34.757710, 135.156192,133
+KoubeDentetsu_Line,34.757882, 135.156262,134
+KoubeDentetsu_Line,34.758316, 135.156370,135
+KoubeDentetsu_Line,34.758590, 135.156466,136
+KoubeDentetsu_Line,34.758822, 135.156597,137
+KoubeDentetsu_Line,34.759010, 135.156732,138
+KoubeDentetsu_Line,34.759126, 135.156841,139
+KoubeDentetsu_Line,34.759267, 135.157013,140
+KoubeDentetsu_Line,34.759399, 135.157203,141
+KoubeDentetsu_Line,34.759560, 135.157528,142
+KoubeDentetsu_Line,34.759712, 135.158080,143
+KoubeDentetsu_Line,34.760140, 135.160357,144
+KoubeDentetsu_Line,34.760193, 135.160926,145
+KoubeDentetsu_Line,34.760483, 135.167060,146
+KoubeDentetsu_Line,34.760560, 135.167596,147
+KoubeDentetsu_Line,34.760643, 135.167905,148
+KoubeDentetsu_Line,34.761535, 135.170279,149
+KoubeDentetsu_Line,34.761671, 135.171365,150 ///谷上駅
+KoubeDentetsu_Line,34.762893, 135.176334,151
+KoubeDentetsu_Line,34.763062, 135.176808,152
+KoubeDentetsu_Line,34.763258, 135.177198,153
+KoubeDentetsu_Line,34.763487, 135.177526,154
+KoubeDentetsu_Line,34.763792, 135.177857,155
+KoubeDentetsu_Line,34.764857, 135.178815,156
+KoubeDentetsu_Line,34.765459, 135.179626,157
+KoubeDentetsu_Line,34.765679, 135.180073,158
+KoubeDentetsu_Line,34.766645, 135.182701,159
+KoubeDentetsu_Line,34.766812, 135.183058,160
+KoubeDentetsu_Line,34.767948, 135.184774,161
+KoubeDentetsu_Line,34.769438, 135.186699,162  ///花山駅
+KoubeDentetsu_Line,34.771310, 135.189553,163
+KoubeDentetsu_Line,34.771561, 135.190026,164
+KoubeDentetsu_Line,34.771687, 135.190337,165
+KoubeDentetsu_Line,34.771756, 135.190578,166
+KoubeDentetsu_Line,34.771857, 135.191157,167
+KoubeDentetsu_Line,34.771889, 135.192088,168
+KoubeDentetsu_Line,34.771911, 135.192353,169
+KoubeDentetsu_Line,34.771966, 135.192599,170
+KoubeDentetsu_Line,34.772124, 135.193041,171
+KoubeDentetsu_Line,34.772329, 135.193390,172
+KoubeDentetsu_Line,34.772554, 135.193644,173
+KoubeDentetsu_Line,34.772745, 135.193805,174
+KoubeDentetsu_Line,34.773261, 135.194071,175
+KoubeDentetsu_Line,34.775167, 135.194470,176
+KoubeDentetsu_Line,34.775831, 135.194699,177
+KoubeDentetsu_Line,34.777669, 135.195646,178
+KoubeDentetsu_Line,34.780423, 135.198041,179
+KoubeDentetsu_Line,34.780763, 135.198435,180   ///大池駅
+KoubeDentetsu_Line,34.781549, 135.199688,181
+KoubeDentetsu_Line,34.781844, 135.200387,182
+KoubeDentetsu_Line,34.782555, 135.202356,183
+KoubeDentetsu_Line,34.784938, 135.205309,184
+KoubeDentetsu_Line,34.785215, 135.205796,185
+KoubeDentetsu_Line,34.785394, 135.206232,186
+KoubeDentetsu_Line,34.785459, 135.206596,187
+KoubeDentetsu_Line,34.785997, 135.208553,188
+KoubeDentetsu_Line,34.786135, 135.208907,189
+KoubeDentetsu_Line,34.786352, 135.209307,190
+KoubeDentetsu_Line,34.786743, 135.209801,191
+KoubeDentetsu_Line,34.787338, 135.210270,192
+KoubeDentetsu_Line,34.787491, 135.210359,193
+KoubeDentetsu_Line,34.787641, 135.210420,194
+KoubeDentetsu_Line,34.789374, 135.211106,195 
+KoubeDentetsu_Line,34.790355, 135.211492,196 ///唐櫃台駅
+KoubeDentetsu_Line,34.791179, 135.211835,197
+KoubeDentetsu_Line,34.791420, 135.211989,198
+KoubeDentetsu_Line,34.791763, 135.212259,199
+KoubeDentetsu_Line,34.792130, 135.212688,200
+KoubeDentetsu_Line,34.792773, 135.213697,201
+KoubeDentetsu_Line,34.793420, 135.214742,202
+KoubeDentetsu_Line,34.794038, 135.215512,203
+KoubeDentetsu_Line,34.794589, 135.216188,204
+KoubeDentetsu_Line,34.794963, 135.216872,205
+KoubeDentetsu_Line,34.795132, 135.217360,206
+KoubeDentetsu_Line,34.795522, 135.218946,207
+KoubeDentetsu_Line,34.796270, 135.220558,208
+KoubeDentetsu_Line,34.796495, 135.220845,209  ///有馬口駅
+KoubeDentetsu_Line,34.796995, 135.221422,210
+KoubeDentetsu_Line,34.797444, 135.221890,211
+KoubeDentetsu_Line,34.797747, 135.222114,212
+KoubeDentetsu_Line,34.798053, 135.222253,213
+KoubeDentetsu_Line,34.798392, 135.222321,214
+KoubeDentetsu_Line,34.798558, 135.222329,215
+KoubeDentetsu_Line,34.798670, 135.222325,216
+KoubeDentetsu_Line,34.798814, 135.222302,217
+KoubeDentetsu_Line,34.798953, 135.222268,218
+KoubeDentetsu_Line,34.799064, 135.222230,219
+KoubeDentetsu_Line,34.799249, 135.222147,220
+KoubeDentetsu_Line,34.799383, 135.222066,221
+KoubeDentetsu_Line,34.799577, 135.221919,222
+KoubeDentetsu_Line,34.799798, 135.221674,223
+KoubeDentetsu_Line,34.799946, 135.221474,224
+KoubeDentetsu_Line,34.800029, 135.221327,225
+KoubeDentetsu_Line,34.800187, 135.220947,226
+KoubeDentetsu_Line,34.800296, 135.220460,227
+KoubeDentetsu_Line,34.800329, 135.220110,228
+KoubeDentetsu_Line,34.800342, 135.219522,229
+KoubeDentetsu_Line,34.800357, 135.219287,230
+KoubeDentetsu_Line,34.800431, 135.218885,231
+KoubeDentetsu_Line,34.800587, 135.218442,232
+KoubeDentetsu_Line,34.800784, 135.218102,233
+KoubeDentetsu_Line,34.800962, 135.217891,234
+KoubeDentetsu_Line,34.801144, 135.217716,235
+KoubeDentetsu_Line,34.801678, 135.217307,236
+KoubeDentetsu_Line,34.802398, 135.216731,237
+KoubeDentetsu_Line,34.803118, 135.216191,238
+KoubeDentetsu_Line,34.803516, 135.215940,239
+KoubeDentetsu_Line,34.804033, 135.215729,240
+KoubeDentetsu_Line,34.804347, 135.215667,241
+KoubeDentetsu_Line,34.804910, 135.215681,242
+KoubeDentetsu_Line,34.805351, 135.215800,243
+KoubeDentetsu_Line,34.805630, 135.215943,244
+KoubeDentetsu_Line,34.805969, 135.216111,245   ///五社駅
+KoubeDentetsu_Line,34.807206, 135.217040,246
+KoubeDentetsu_Line,34.808460, 135.217917,247
+KoubeDentetsu_Line,34.810207, 135.219062,248
+KoubeDentetsu_Line,34.811895, 135.219766,249
+KoubeDentetsu_Line,34.813861, 135.220298,250
+KoubeDentetsu_Line,34.818718, 135.221574,251
+KoubeDentetsu_Line,34.819867, 135.221834,252
+KoubeDentetsu_Line,34.820714, 135.222152,253
+KoubeDentetsu_Line,34.821619, 135.222479,254   ///岡場駅
+KoubeDentetsu_Line,34.827874, 135.224660,255
+KoubeDentetsu_Line,34.829737, 135.224838,256
+KoubeDentetsu_Line,34.832122, 135.225025,257
+KoubeDentetsu_Line,34.833484, 135.225143,258
+KoubeDentetsu_Line,34.833964, 135.225254,259
+KoubeDentetsu_Line,34.834212, 135.225342,260
+KoubeDentetsu_Line,34.834519, 135.225485,261
+KoubeDentetsu_Line,34.835494, 135.226035,262   ///田尾寺駅
+KoubeDentetsu_Line,34.836299, 135.226531,263
+KoubeDentetsu_Line,34.838038, 135.227492,264
+KoubeDentetsu_Line,34.838363, 135.227584,265
+KoubeDentetsu_Line,34.838823, 135.227643,266
+KoubeDentetsu_Line,34.840843, 135.227445,267
+KoubeDentetsu_Line,34.841983, 135.227331,268
+KoubeDentetsu_Line,34.843560, 135.227167,269
+KoubeDentetsu_Line,34.844557, 135.227138,270
+KoubeDentetsu_Line,34.845619, 135.227233,271
+KoubeDentetsu_Line,34.847233, 135.227359,272
+KoubeDentetsu_Line,34.847896, 135.227279,273
+KoubeDentetsu_Line,34.848346, 135.227166,274
+KoubeDentetsu_Line,34.848683, 135.227050,275
+KoubeDentetsu_Line,34.849027, 135.226986,276   ///二郎駅
+KoubeDentetsu_Line,34.849522, 135.226652,277
+KoubeDentetsu_Line,34.850786, 135.225985,278
+KoubeDentetsu_Line,34.851305, 135.225528,279
+KoubeDentetsu_Line,34.851751, 135.225014,280
+KoubeDentetsu_Line,34.852350, 135.224258,281
+KoubeDentetsu_Line,34.852411, 135.224206,282
+KoubeDentetsu_Line,34.852848, 135.223696,283
+KoubeDentetsu_Line,34.853279, 135.223432,284
+KoubeDentetsu_Line,34.853526, 135.223334,285
+KoubeDentetsu_Line,34.853749, 135.223294,286
+KoubeDentetsu_Line,34.854022, 135.223269,287
+KoubeDentetsu_Line,34.854544, 135.223270,288
+KoubeDentetsu_Line,34.855140, 135.223235,289
+KoubeDentetsu_Line,34.856150, 135.223175,290  ///道場南口駅
+KoubeDentetsu_Line,34.856462, 135.223179,291
+KoubeDentetsu_Line,34.856765, 135.223139,292
+KoubeDentetsu_Line,34.857178, 135.223176,293
+KoubeDentetsu_Line,34.857383, 135.223205,294
+KoubeDentetsu_Line,34.857834, 135.223283,295
+KoubeDentetsu_Line,34.858458, 135.223451,296
+KoubeDentetsu_Line,34.859472, 135.223822,297
+KoubeDentetsu_Line,34.862146, 135.224817,298
+KoubeDentetsu_Line,34.865255, 135.225928,299
+KoubeDentetsu_Line,34.866159, 135.226054,300
+KoubeDentetsu_Line,34.866628, 135.226067,301 ///神鉄道場駅
+KoubeDentetsu_Line,34.867452, 135.226212,302
+KoubeDentetsu_Line,34.867732, 135.226194,303
+KoubeDentetsu_Line,34.868010, 135.226129,304
+KoubeDentetsu_Line,34.868353, 135.225955,305
+KoubeDentetsu_Line,34.868704, 135.225654,306
+KoubeDentetsu_Line,34.870331, 135.223601,307
+KoubeDentetsu_Line,34.872314, 135.221082,308
+KoubeDentetsu_Line,34.873675, 135.219366,309
+KoubeDentetsu_Line,34.873997, 135.219069,310
+KoubeDentetsu_Line,34.874246, 135.218915,311
+KoubeDentetsu_Line,34.874465, 135.218829,312
+KoubeDentetsu_Line,34.874795, 135.218759,313
+KoubeDentetsu_Line,34.875091, 135.218763,314
+KoubeDentetsu_Line,34.875474, 135.218849,315
+KoubeDentetsu_Line,34.875690, 135.218957,316
+KoubeDentetsu_Line,34.875808, 135.219027,317
+KoubeDentetsu_Line,34.875984, 135.219159,318
+KoubeDentetsu_Line,34.876236, 135.219396,319
+KoubeDentetsu_Line,34.876541, 135.219689,320
+KoubeDentetsu_Line,34.876650, 135.219794,321
+KoubeDentetsu_Line,34.876966, 135.220091,322   ///横山駅
+KoubeDentetsu_Line,34.877601, 135.220702,323
+KoubeDentetsu_Line,34.878992, 135.222061,324
+KoubeDentetsu_Line,34.879403, 135.222495,325
+KoubeDentetsu_Line,34.879805, 135.223086,326
+KoubeDentetsu_Line,34.879986, 135.223458,327
+KoubeDentetsu_Line,34.880222, 135.224083,328
+KoubeDentetsu_Line,34.880438, 135.224775,329
+KoubeDentetsu_Line,34.881167, 135.227480,330
+KoubeDentetsu_Line,34.881768, 135.229502,331   ///三田本町駅
+KoubeDentetsu_Line,34.881906, 135.229977,332
+KoubeDentetsu_Line,34.882055, 135.230265,333
+KoubeDentetsu_Line,34.882169, 135.230454,334
+KoubeDentetsu_Line,34.882308, 135.230638,335
+KoubeDentetsu_Line,34.882489, 135.230845,336
+KoubeDentetsu_Line,34.882779, 135.231103,337
+KoubeDentetsu_Line,34.885056, 135.232483,338
+KoubeDentetsu_Line,34.885271, 135.232570,339
+KoubeDentetsu_Line,34.885516, 135.232629,340
+KoubeDentetsu_Line,34.885705, 135.232648,341
+KoubeDentetsu_Line,34.885888, 135.232641,342
+KoubeDentetsu_Line,34.886032, 135.232625,343
+KoubeDentetsu_Line,34.886194, 135.232580,344
+KoubeDentetsu_Line,34.886327, 135.232531,345
+KoubeDentetsu_Line,34.886659, 135.232341,346
+KoubeDentetsu_Line,34.886974, 135.232071,347
+KoubeDentetsu_Line,34.887294, 135.231762,348
+KoubeDentetsu_Line,34.888734, 135.229779,349  ///三田駅
+   
+
+Potorain_Line,34.694516,135.195193,1  ///三ノ宮駅
+Potorain_Line,34.694826,135.195516,2
+Potorain_Line,34.694969,135.195734,3
+Potorain_Line,34.695014,135.195840,4
+Potorain_Line,34.695012,135.195924,5
+Potorain_Line,34.694999,135.195981,6
+Potorain_Line,34.694963,135.196056,7
+Potorain_Line,34.694828,135.196196,8
+Potorain_Line,34.692431,135.197641,9 
+Potorain_Line,34.689431,135.199423,10  ///貿易センター駅
+Potorain_Line,34.699000,135.207000,11
+Potorain_Line,34.700500,135.209500,12
