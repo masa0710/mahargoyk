@@ -291,8 +291,9 @@ class MapPageState extends State<MapPage> {
             Marker(
               point: LatLng(lat, lon),
               width: 80,
-              height: 30,
+              height: 40,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
 
                   const Icon(Icons.train, color: Colors.blue, size: 20), 
