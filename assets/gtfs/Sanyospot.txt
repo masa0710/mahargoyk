@@ -1,0 +1,8 @@
+﻿stop_id,stop_name,stop_lat,stop_lon    ///修正済み
+Kosokunagata,高速長田駅,34.667296,135.151715
+Daikai,大開駅,34.6714542 135.1620265
+Sinkaiti,新開地駅,34.676439,135.170005
+Kousokukoube,高速神戸駅,34.679548,135.175003
+Nishimotomati,西元町駅,34.684143,135.179832
+Motomati,元町駅,34.689376,135.187281
+Hanshinkoubesannnomiya,阪神神戸三宮,34.693662,135.195572

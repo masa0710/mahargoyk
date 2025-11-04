@@ -1,0 +1,10 @@
+﻿stop_id,stop_name,stop_lat,stop_lon
+Sannnomiya,三ノ宮駅,34.694516,135.195193
+Boeki Center,貿易センター駅,34.689431,135.199423
+Port Terminal,ポートターミナル駅, 34.681355,135.202284
+Naka Koen,中公園駅,34.673291,135.207445
+Minatojima,みなとじま駅,34.66895,135.210108
+Shimin Hiroba,市民広場駅,34.664951,135.212435
+Iryo Center,医療センター駅,34.658526,135.216456
+Keisan Kagaku Center,計算科学センター駅,34.654764,135.221501
+Kobe Airport,神戸空港駅,34.637291, 135.229447
